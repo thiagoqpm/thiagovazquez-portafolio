@@ -1,0 +1,85 @@
+/* color negro #070707
+   color gris #757575
+   color gris mas oscuro #212121
+   color azul #3c54b4
+   color gris clarito #8c8c8c
+   */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    display: grid;
+    gap: 0rem;
+    grid-template-rows:
+        4rem 6rem auto 6rem 6rem 4rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'header' 'sidebar'
+        'main' 'widget'
+        'statistics' 'footer';
+    height: 100vh;
+}
+
+@media (min-width: 480px) {
+    .layout {
+        display: grid;
+        grid-template-rows: 4rem auto 6rem 4rem;
+        grid-template-columns: 10rem auto auto;
+        grid-template-areas:
+            'header header header'
+            'sidebar main main'
+            'sidebar widget statistics'
+            'footer footer footer';
+    }
+}
+
+header {
+    grid-area: header;
+    background:#3c54b4;
+}
+
+footer {
+    grid-area: footer;
+    background:#3c54b4;
+}
+
+nav {
+    grid-area: sidebar;
+    background:#070707;
+}
+
+main {
+    grid-area: main;
+    background:#757575;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.widget {
+    grid-area: widget;
+    background:#212121;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.statistics {
+    grid-area: statistics;
+    background:#8c8c8c;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.foto-perfil{
+    height: 120px;
+    width: 120px;
+}
+.imagen-logos{
+    height:80px;
+    width:80px;
+    object-fit: cover;
+}
